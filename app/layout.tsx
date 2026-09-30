@@ -58,6 +58,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <span>MOTOHAUS<span className="brand-period">.</span></span>
           </Link>
           <span>Chọn chất riêng, mở máy lên đường.</span>
+          <nav className="footer-demo-links" aria-label="Chuyển trang demo">
+            <Link href="/csr">CSR</Link>
+            <Link href="/ssr">SSR</Link>
+            <Link href="/ssg">SSG</Link>
+            <Link href="/topic-4">SEO · Topic 4</Link>
+          </nav>
           <a href={facebookUrl} rel="noreferrer" target="_blank">Facebook showroom <span aria-hidden="true">↗</span></a>
         </footer>
       </body>

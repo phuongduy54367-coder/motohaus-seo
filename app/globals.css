@@ -50,6 +50,9 @@ button, input { font: inherit; }
 .site-footer { align-items: center; border-top: 1px solid var(--line); display: flex; justify-content: space-between; margin-top: 72px; padding: 26px clamp(20px, 6vw, 88px); }
 .site-footer > span, .site-footer > a:last-child { color: var(--muted); font-size: 12px; }
 .footer-brand { color: var(--foreground) !important; }
+.footer-demo-links { display: flex; flex-wrap: wrap; gap: 7px; }
+.footer-demo-links a { border: 1px solid var(--line); font-size: 10px; font-weight: 800; padding: 8px 10px; }
+.footer-demo-links a:hover { border-color: var(--accent); }
 
 .home-main { margin: 0 auto; max-width: 1440px; width: 100%; }
 .hero { align-items: center; display: grid; gap: 5vw; grid-template-columns: 0.86fr 1.14fr; min-height: 555px; padding: 48px clamp(20px, 7vw, 100px) 56px; }
