@@ -23,6 +23,9 @@ export const metadata: Metadata = {
     default: "MOTOHAUS | Chọn chất riêng, mở máy lên đường",
     template: "%s | MOTOHAUS",
   },
+  verification: {
+    google: "gNbPRt_BEHN_jRSoeBn2bi2gyYSlMsmDWUihqx0LJJY",
+  },
   description:
     "Showroom mô tô thể thao MOTOHAUS. Khám phá xe, thông số và đặt lịch xem xe.",
   openGraph: {
