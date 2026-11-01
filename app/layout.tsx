@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import { Be_Vietnam_Pro, Noto_Serif } from "next/font/google";
 import { siteUrl } from "./site-url";
 import { facebookUrl } from "./site-links";
@@ -43,6 +44,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${vietnamSans.variable} ${vietnamSerif.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <GoogleAnalytics gaId="G-0HYJMF31QV" />
         <header className="site-header">
           <Link className="brand" href="/" aria-label="MOTOHAUS - Trang chủ">
             <span className="brand-mark">M</span>
