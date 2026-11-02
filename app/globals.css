@@ -88,7 +88,7 @@ button, input { font: inherit; }
 .bike-image img { height: 100%; object-fit: contain; transition: transform 350ms ease; width: 100%; }
 .bike-card:hover .bike-image img { transform: scale(1.04); }
 .bike-tag { background: var(--acid); font-size: 9px; font-weight: 900; left: 10px; padding: 7px 9px; position: absolute; top: 10px; }
-.photo-credit { color: var(--muted); display: inline-block; font-size: 9px; margin-top: 7px; }
+.bike-image-placeholder { align-items: center; color: var(--muted); display: flex; font-size: 11px; height: 100%; justify-content: center; }
 .bike-info { padding: 14px 2px; }
 .bike-meta { color: var(--muted); display: flex; font-size: 10px; justify-content: space-between; text-transform: uppercase; }
 .bike-info h3 { font-family: var(--font-display), Georgia, "Times New Roman", serif; font-size: 21px; font-weight: 500; letter-spacing: 0; margin: 10px 0 5px; }
@@ -139,12 +139,11 @@ button, input { font: inherit; }
 .product-breadcrumb { align-items: center; color: var(--muted); display: flex; flex-wrap: wrap; font-size: 11px; gap: 10px; margin-bottom: 24px; }
 .product-breadcrumb a:hover, .product-back:hover { color: var(--accent); }
 .product-layout { align-items: start; display: grid; gap: clamp(28px, 5vw, 64px); grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr); }
+.product-layout-no-images .product-summary { grid-column: 1 / -1; }
 .product-gallery { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .product-photo { aspect-ratio: 1.2; background: #e9e8e2; margin: 0; overflow: hidden; position: relative; }
 .product-photo-main { aspect-ratio: 1.45; grid-column: 1 / -1; }
 .product-photo img { object-fit: contain; }
-.product-photo figcaption { background: rgb(23 24 22 / 78%); bottom: 0; color: white; font-size: 9px; left: 0; padding: 8px 10px; position: absolute; }
-.product-photo figcaption a:hover { color: var(--acid); }
 .product-summary { padding: 12px 0; }
 .product-summary h1 { font-family: var(--font-display), Georgia, "Times New Roman", serif; font-size: clamp(36px, 4vw, 54px); font-weight: 500; letter-spacing: 0; line-height: 1.05; margin: 17px 0 12px; }
 .product-description { color: var(--muted); font-size: 13px; line-height: 1.75; }
@@ -171,6 +170,7 @@ button, input { font: inherit; }
 .news-grid { display: grid; gap: 25px 18px; grid-template-columns: repeat(3, minmax(0, 1fr)); padding-top: 32px; }
 .news-card { min-width: 0; }
 .news-card-image { background: #e8e7e1; display: block; height: clamp(180px, 22vw, 270px); overflow: hidden; position: relative; }
+.news-card-image-empty { cursor: default; }
 .news-card-image img { height: 100%; object-fit: cover; transition: transform 350ms ease; width: 100%; }
 .news-card:hover .news-card-image img { transform: scale(1.035); }
 .news-card-copy { padding: 14px 2px; }
@@ -185,8 +185,6 @@ button, input { font: inherit; }
 .article-heading h1 { font-size: clamp(38px, 5.5vw, 62px); }
 .article-cover { aspect-ratio: 1.9; background: #e8e7e1; margin: 0; overflow: hidden; position: relative; }
 .article-cover img { object-fit: cover; }
-.article-cover figcaption { background: rgb(23 24 22 / 78%); bottom: 0; color: white; font-size: 9px; left: 0; padding: 8px 10px; position: absolute; }
-.article-cover figcaption a:hover { color: var(--acid); }
 .article-content { margin: 0 auto; max-width: 760px; padding: 27px 0 10px; }
 .article-content h2 { font-family: var(--font-display), Georgia, "Times New Roman", serif; font-size: 29px; font-weight: 500; letter-spacing: 0; line-height: 1.2; margin: 32px 0 12px; }
 .article-content p, .article-content li { color: #555750; font-size: 13px; line-height: 1.9; }

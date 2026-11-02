@@ -18,8 +18,8 @@ export type Motorcycle = {
   photos: MotorcyclePhoto[];
 };
 
-export function requiresPhotoCredit(license: string) {
-  return license.startsWith("CC BY");
+export function canDisplayWithoutCredit(license: string) {
+  return license === "CC0" || license === "Public domain";
 }
 
 export const motorcycles: Motorcycle[] = [

@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { newsArticles, type NewsArticle } from "../../news-articles";
-import { requiresPhotoCredit } from "../../motorcycles";
 
 type NewsArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -35,7 +34,7 @@ export async function generateMetadata({
     openGraph: {
       title: article.title,
       description: article.excerpt,
-      images: [article.cover.src],
+      images: article.cover ? [article.cover.src] : [],
     },
   };
 }
@@ -134,20 +133,17 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
           <h1>{article.title}</h1>
           <p>{article.excerpt}</p>
         </header>
-        <figure className="article-cover">
-          <Image
-            alt={article.cover.alt}
-            fill
-            priority
-            sizes="(max-width: 700px) 100vw, 1000px"
-            src={article.cover.src}
-          />
-          {requiresPhotoCredit(article.cover.license) && (
-            <figcaption>
-              Ảnh: {article.cover.author} · {article.cover.license}
-            </figcaption>
-          )}
-        </figure>
+        {article.cover && (
+          <figure className="article-cover">
+            <Image
+              alt={article.cover.alt}
+              fill
+              priority
+              sizes="(max-width: 700px) 100vw, 1000px"
+              src={article.cover.src}
+            />
+          </figure>
+        )}
         <div className="article-content">
           <ArticleBody article={article} />
           <aside className="article-callout">

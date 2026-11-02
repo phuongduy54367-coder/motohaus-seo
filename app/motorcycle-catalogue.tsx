@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motorcycles, requiresPhotoCredit } from "./motorcycles";
+import { canDisplayWithoutCredit, motorcycles } from "./motorcycles";
 import { facebookUrl } from "./site-links";
 
 const categories = ["Tất cả", "Sport", "Naked", "Adventure", "Cruiser"];
@@ -54,16 +54,17 @@ export default function MotorcycleCatalogue() {
       </nav>
       <div className="bike-grid" aria-live="polite">
         {visibleBikes.length ? visibleBikes.map((bike) => {
-          const cover = bike.photos[0];
+          const cover = bike.photos.find((photo) => canDisplayWithoutCredit(photo.license));
           return (
             <article className="bike-card" key={bike.slug}>
               <Link className="bike-image" href={`/moto/${bike.slug}`} aria-label={`Xem thông tin ${bike.name}`}>
-                <Image alt={cover.alt} height={640} loading="lazy" src={cover.src} width={960} />
+                {cover ? (
+                  <Image alt={cover.alt} height={640} loading="lazy" src={cover.src} width={960} />
+                ) : (
+                  <span className="bike-image-placeholder">Hình ảnh đang cập nhật</span>
+                )}
                 <span className="bike-tag">{bike.tag}</span>
               </Link>
-              {requiresPhotoCredit(cover.license) && (
-                <span className="photo-credit">Ảnh: {cover.author} · {cover.license}</span>
-              )}
               <div className="bike-info">
                 <div className="bike-meta"><span>{bike.category}</span><span>{bike.engine}</span></div>
                 <h3><Link href={`/moto/${bike.slug}`}>{bike.name}</Link></h3>
