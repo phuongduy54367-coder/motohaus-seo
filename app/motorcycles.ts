@@ -18,6 +18,10 @@ export type Motorcycle = {
   photos: MotorcyclePhoto[];
 };
 
+export function requiresPhotoCredit(license: string) {
+  return license.startsWith("CC BY");
+}
+
 export const motorcycles: Motorcycle[] = [
   {
     slug: "yamaha-yzf-r15",
@@ -25,7 +29,7 @@ export const motorcycles: Motorcycle[] = [
     brand: "Yamaha",
     category: "Sport",
     engine: "155 cc · 1 xi-lanh",
-    price: "Khoảng 78 triệu",
+    price: "Khoảng 99 triệu",
     tag: "Sport cỡ nhỏ",
     description: "Sportbike gọn nhẹ, phù hợp người mới làm quen xe côn tay.",
     photos: [
@@ -40,7 +44,7 @@ export const motorcycles: Motorcycle[] = [
     brand: "Suzuki",
     category: "Sport",
     engine: "147.3 cc · 1 xi-lanh",
-    price: "Liên hệ báo giá",
+    price: "Khoảng 95 triệu",
     tag: "Sport 150 cc",
     description: "Sportbike 150 cc gọn nhẹ, phù hợp đi phố và làm quen xe côn tay.",
     photos: [
@@ -108,7 +112,7 @@ export const motorcycles: Motorcycle[] = [
     brand: "Honda",
     category: "Naked",
     engine: "149.16 cc · 1 xi-lanh",
-    price: "Liên hệ báo giá",
+    price: "Khoảng 98 triệu",
     tag: "Naked 150 cc",
     description: "Naked bike 150 cc với tay lái thẳng và kiểu dáng gọn gàng.",
     photos: [

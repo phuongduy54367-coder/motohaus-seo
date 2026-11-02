@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { newsArticles } from "../news-articles";
+import { requiresPhotoCredit } from "../motorcycles";
 
 export const metadata: Metadata = {
   title: "Tin tức mô tô, tư vấn chọn xe và kinh nghiệm sử dụng",
@@ -32,7 +33,9 @@ export default function NewsPage() {
                 width={960}
               />
             </Link>
-            <span className="photo-credit">Ảnh: {article.cover.author} · {article.cover.license}</span>
+            {requiresPhotoCredit(article.cover.license) && (
+              <span className="photo-credit">Ảnh: {article.cover.author} · {article.cover.license}</span>
+            )}
             <div className="news-card-copy">
               <span className="news-category">{article.category}</span>
               <h2><Link href={`/tin-tuc/${article.slug}`}>{article.title}</Link></h2>

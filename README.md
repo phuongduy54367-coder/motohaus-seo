@@ -1,15 +1,14 @@
 # MOTOHAUS
 
-Website showroom mô tô demo cho Topic 4: JavaScript SEO với Next.js 16.
+Website giới thiệu showroom, danh mục xe mô tô, tin tức và thông tin liên hệ MOTOHAUS trên Next.js 16.
 
 ## Các trang
 
 - `/`: Showroom có 10 mẫu xe từ nhiều hãng, lọc bốn phân khúc và tìm kiếm phía trình duyệt.
 - `/moto/[slug]`: Trang chi tiết cho từng xe với gallery ảnh, giá và thông số cơ bản.
-- `/topic-4`: So sánh CSR/SSR/SSG, hướng dẫn kiểm tra bằng Google Search Console và Rich Results Test, kèm khuyến nghị cho Next.js.
-- `/csr`: Demo nội dung chỉ xuất hiện sau khi JavaScript chạy.
-- `/ssr`: Demo render theo từng request bằng `connection()` của Next.js.
-- `/ssg`: Demo dữ liệu tĩnh được tạo sẵn khi build.
+- `/danh-muc/[slug]`: Danh sách xe theo từng phân khúc.
+- `/tin-tuc` và `/tin-tuc/[slug]`: Bài viết tư vấn chọn xe và kinh nghiệm sử dụng.
+- `/lien-he`: Thông tin liên hệ showroom.
 - `/robots.txt` và `/sitemap.xml`: Route SEO tự sinh; URL production lấy từ biến môi trường của Vercel hoặc `NEXT_PUBLIC_SITE_URL`.
 
 ## Chạy trên máy
@@ -32,4 +31,4 @@ Vercel Hobby có thể cấp một địa chỉ dạng `ten-du-an.vercel.app` mi
 5. Giữ cấu hình Next.js mặc định, chọn **Deploy**. Chờ build hoàn tất; Vercel sẽ cấp URL `*.vercel.app` để gửi thầy.
 6. Mỗi lần cập nhật, commit và push bằng GitHub Desktop; Vercel tự build lại.
 
-Ảnh sản phẩm lấy từ Wikimedia Commons; mỗi thẻ có liên kết nguồn, tác giả và giấy phép. Thông tin xe/giá là dữ liệu minh họa, không phải báo giá bán hàng. Liên kết Facebook tập trung trong `app/site-links.ts`. Có thể đặt `NEXT_PUBLIC_SITE_URL` thành URL production sau khi deploy. Thiết bị xem web cần có Internet để tải ảnh.
+Ảnh sản phẩm lấy từ Wikimedia Commons; ghi công tác giả và giấy phép được giữ lại theo điều kiện sử dụng ảnh. Thông tin xe/giá là dữ liệu minh họa, không phải báo giá bán hàng. Liên kết Facebook tập trung trong `app/site-links.ts`. Có thể đặt `NEXT_PUBLIC_SITE_URL` thành URL production sau khi deploy. Thiết bị xem web cần có Internet để tải ảnh.

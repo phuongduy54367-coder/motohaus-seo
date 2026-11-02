@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { motorcycles } from "../../motorcycles";
+import { motorcycles, requiresPhotoCredit } from "../../motorcycles";
 import { facebookUrl } from "../../site-links";
 
 type BikePageProps = {
@@ -63,9 +63,11 @@ export default async function MotorcycleDetailPage({ params }: BikePageProps) {
                 sizes={index === 0 ? "(max-width: 700px) 100vw, 60vw" : "(max-width: 700px) 50vw, 30vw"}
                 src={photo.src}
               />
-              <figcaption>
-                Ảnh: {photo.author} · {photo.license}
-              </figcaption>
+              {requiresPhotoCredit(photo.license) && (
+                <figcaption>
+                  Ảnh: {photo.author} · {photo.license}
+                </figcaption>
+              )}
             </figure>
           ))}
         </section>

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motorcycles } from "./motorcycles";
+import { motorcycles, requiresPhotoCredit } from "./motorcycles";
 import { facebookUrl } from "./site-links";
 
 const categories = ["Tất cả", "Sport", "Naked", "Adventure", "Cruiser"];
@@ -61,7 +61,9 @@ export default function MotorcycleCatalogue() {
                 <Image alt={cover.alt} height={640} loading="lazy" src={cover.src} width={960} />
                 <span className="bike-tag">{bike.tag}</span>
               </Link>
-              <span className="photo-credit">Ảnh: {cover.author} · {cover.license}</span>
+              {requiresPhotoCredit(cover.license) && (
+                <span className="photo-credit">Ảnh: {cover.author} · {cover.license}</span>
+              )}
               <div className="bike-info">
                 <div className="bike-meta"><span>{bike.category}</span><span>{bike.engine}</span></div>
                 <h3><Link href={`/moto/${bike.slug}`}>{bike.name}</Link></h3>

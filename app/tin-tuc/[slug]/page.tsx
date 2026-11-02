@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { newsArticles, type NewsArticle } from "../../news-articles";
+import { requiresPhotoCredit } from "../../motorcycles";
 
 type NewsArticlePageProps = {
   params: Promise<{ slug: string }>;
@@ -141,9 +142,11 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
             sizes="(max-width: 700px) 100vw, 1000px"
             src={article.cover.src}
           />
-          <figcaption>
-            Ảnh: {article.cover.author} · {article.cover.license}
-          </figcaption>
+          {requiresPhotoCredit(article.cover.license) && (
+            <figcaption>
+              Ảnh: {article.cover.author} · {article.cover.license}
+            </figcaption>
+          )}
         </figure>
         <div className="article-content">
           <ArticleBody article={article} />
