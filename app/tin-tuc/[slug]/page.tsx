@@ -142,9 +142,7 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
             src={article.cover.src}
           />
           <figcaption>
-            <a href={article.cover.source} rel="noreferrer" target="_blank">
-              Ảnh: {article.cover.author} · {article.cover.license} ↗
-            </a>
+            Ảnh: {article.cover.author} · {article.cover.license}
           </figcaption>
         </figure>
         <div className="article-content">

@@ -64,9 +64,7 @@ export default async function MotorcycleDetailPage({ params }: BikePageProps) {
                 src={photo.src}
               />
               <figcaption>
-                <a href={photo.source} rel="noreferrer" target="_blank">
-                  Ảnh: {photo.author} · {photo.license} ↗
-                </a>
+                Ảnh: {photo.author} · {photo.license}
               </figcaption>
             </figure>
           ))}

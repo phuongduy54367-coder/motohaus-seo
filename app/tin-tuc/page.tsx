@@ -32,9 +32,7 @@ export default function NewsPage() {
                 width={960}
               />
             </Link>
-            <a className="photo-credit" href={article.cover.source} rel="noreferrer" target="_blank">
-              Ảnh: {article.cover.author} · {article.cover.license} ↗
-            </a>
+            <span className="photo-credit">Ảnh: {article.cover.author} · {article.cover.license}</span>
             <div className="news-card-copy">
               <span className="news-category">{article.category}</span>
               <h2><Link href={`/tin-tuc/${article.slug}`}>{article.title}</Link></h2>

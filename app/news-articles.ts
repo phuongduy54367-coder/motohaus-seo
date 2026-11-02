@@ -40,7 +40,7 @@ export const newsArticles: NewsArticle[] = [
       "Giải thích câu hỏi về bằng lái mô tô theo quy định hiện hành, phân biệt xe đến 125 cc và xe trên 125 cc trước khi chọn mua.",
     category: "Luật giao thông",
     kind: "license",
-    cover: getCover("kawasaki-ninja-zx-6r"),
+    cover: getCover("suzuki-gsx-r150"),
   },
   {
     slug: "chi-phi-bao-duong-xe-moto-phan-khoi-lon",

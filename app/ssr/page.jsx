@@ -23,9 +23,7 @@ export default async function SSRPage() {
                 <Image alt={cover.alt} height={640} loading="lazy" src={cover.src} width={960} />
                 <span className="bike-tag">{bike.tag}</span>
               </Link>
-              <a className="photo-credit" href={cover.source} rel="noreferrer" target="_blank">
-                Ảnh: {cover.author} · {cover.license} ↗
-              </a>
+              <span className="photo-credit">Ảnh: {cover.author} · {cover.license}</span>
               <div className="bike-info">
                 <div className="bike-meta"><span>{bike.category}</span><span>{bike.engine}</span></div>
                 <h2><Link href={`/moto/${bike.slug}`}>{bike.name}</Link></h2>
