@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { canDisplayWithoutCredit, motorcycles } from "../../motorcycles";
+import { motorcycles, requiresPhotoCredit } from "../../motorcycles";
 import { facebookUrl } from "../../site-links";
 
 type BikePageProps = {
@@ -25,8 +25,6 @@ export async function generateMetadata({ params }: BikePageProps): Promise<Metad
     return { title: "Không tìm thấy xe" };
   }
 
-  const photos = motorcycle.photos.filter((photo) => canDisplayWithoutCredit(photo.license));
-
   return {
     title: `${motorcycle.name}: Giá và thông số`,
     description: motorcycle.description,
@@ -34,7 +32,7 @@ export async function generateMetadata({ params }: BikePageProps): Promise<Metad
     openGraph: {
       title: `${motorcycle.name} | MOTOHAUS`,
       description: motorcycle.description,
-      images: photos.map((photo) => photo.src),
+      images: motorcycle.photos.map((photo) => photo.src),
     },
   };
 }
@@ -47,8 +45,6 @@ export default async function MotorcycleDetailPage({ params }: BikePageProps) {
     notFound();
   }
 
-  const photos = motorcycle.photos.filter((photo) => canDisplayWithoutCredit(photo.license));
-
   return (
     <main className="product-page">
       <nav aria-label="Breadcrumb" className="product-breadcrumb">
@@ -56,10 +52,9 @@ export default async function MotorcycleDetailPage({ params }: BikePageProps) {
         <Link href="/#collection">Bộ sưu tập</Link><span aria-hidden="true">/</span>
         <span>{motorcycle.name}</span>
       </nav>
-      <div className={`product-layout${photos.length === 0 ? " product-layout-no-images" : ""}`}>
-        {photos.length > 0 && (
-          <section aria-label={`Hình ảnh ${motorcycle.name}`} className="product-gallery">
-          {photos.map((photo, index) => (
+      <div className="product-layout">
+        <section aria-label={`Hình ảnh ${motorcycle.name}`} className="product-gallery">
+          {motorcycle.photos.map((photo, index) => (
             <figure className={`product-photo${index === 0 ? " product-photo-main" : ""}`} key={photo.src}>
               <Image
                 alt={photo.alt}
@@ -68,10 +63,14 @@ export default async function MotorcycleDetailPage({ params }: BikePageProps) {
                 sizes={index === 0 ? "(max-width: 700px) 100vw, 60vw" : "(max-width: 700px) 50vw, 30vw"}
                 src={photo.src}
               />
+              {requiresPhotoCredit(photo.license) && (
+                <figcaption>
+                  Ảnh: {photo.author} · {photo.license}
+                </figcaption>
+              )}
             </figure>
           ))}
-          </section>
-        )}
+        </section>
         <section className="product-summary">
           <span className="eyebrow">{motorcycle.brand} · {motorcycle.category}</span>
           <h1>{motorcycle.name}</h1>

@@ -31,4 +31,4 @@ Vercel Hobby có thể cấp một địa chỉ dạng `ten-du-an.vercel.app` mi
 5. Giữ cấu hình Next.js mặc định, chọn **Deploy**. Chờ build hoàn tất; Vercel sẽ cấp URL `*.vercel.app` để gửi thầy.
 6. Mỗi lần cập nhật, commit và push bằng GitHub Desktop; Vercel tự build lại.
 
-Website chỉ hiển thị ảnh CC0 hoặc phạm vi công cộng, không cần ghi tên tác giả; ảnh có điều kiện ghi công không được đưa lên giao diện. Mẫu xe chưa có ảnh phù hợp sẽ hiện khung chờ ảnh. Thông tin xe/giá là dữ liệu minh họa, không phải báo giá bán hàng. Liên kết Facebook tập trung trong `app/site-links.ts`. Có thể đặt `NEXT_PUBLIC_SITE_URL` thành URL production sau khi deploy. Thiết bị xem web cần có Internet để tải ảnh.
+Ảnh sản phẩm lấy từ Wikimedia Commons; ảnh được giữ hiển thị đầy đủ và ảnh có giấy phép yêu cầu ghi công tiếp tục hiện tác giả/giấy phép cho đến khi được thay bằng ảnh có quyền sử dụng không cần ghi tên. Thông tin xe/giá là dữ liệu minh họa, không phải báo giá bán hàng. Liên kết Facebook tập trung trong `app/site-links.ts`. Có thể đặt `NEXT_PUBLIC_SITE_URL` thành URL production sau khi deploy. Thiết bị xem web cần có Internet để tải ảnh.

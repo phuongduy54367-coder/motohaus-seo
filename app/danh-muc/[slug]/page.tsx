@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { motorcycleCategories } from "../../motorcycle-categories";
-import { canDisplayWithoutCredit, motorcycles } from "../../motorcycles";
+import { motorcycles, requiresPhotoCredit } from "../../motorcycles";
 
 type CategoryPageProps = {
   params: Promise<{ slug: string }>;
@@ -74,7 +74,7 @@ export default async function MotorcycleCategoryPage({
         </div>
         <div className="bike-grid">
           {bikes.map((bike) => {
-            const cover = bike.photos.find((photo) => canDisplayWithoutCredit(photo.license));
+            const cover = bike.photos[0];
             return (
               <article className="bike-card" key={bike.slug}>
                 <Link
@@ -82,13 +82,12 @@ export default async function MotorcycleCategoryPage({
                   className="bike-image"
                   href={`/moto/${bike.slug}`}
                 >
-                  {cover ? (
-                    <Image alt={cover.alt} height={640} loading="lazy" src={cover.src} width={960} />
-                  ) : (
-                    <span className="bike-image-placeholder">Hình ảnh đang cập nhật</span>
-                  )}
+                  <Image alt={cover.alt} height={640} loading="lazy" src={cover.src} width={960} />
                   <span className="bike-tag">{bike.tag}</span>
                 </Link>
+                {requiresPhotoCredit(cover.license) && (
+                  <span className="photo-credit">Ảnh: {cover.author} · {cover.license}</span>
+                )}
                 <div className="bike-info">
                   <div className="bike-meta"><span>{bike.category}</span><span>{bike.engine}</span></div>
                   <h3><Link href={`/moto/${bike.slug}`}>{bike.name}</Link></h3>

@@ -1,10 +1,10 @@
-import { canDisplayWithoutCredit, motorcycles } from "./motorcycles";
+import { motorcycles } from "./motorcycles";
 
 function getCover(motorcycleSlug: string) {
   const motorcycle = motorcycles.find(({ slug }) => slug === motorcycleSlug);
-  const cover = motorcycle?.photos.find((photo) => canDisplayWithoutCredit(photo.license));
+  const cover = motorcycle?.photos[0];
 
-  if (!motorcycle) {
+  if (!cover) {
     throw new Error(`Missing cover image for motorcycle: ${motorcycleSlug}`);
   }
 
@@ -18,7 +18,7 @@ export type NewsArticle = {
   excerpt: string;
   category: string;
   kind: "beginners" | "license" | "maintenance";
-  cover: (typeof motorcycles)[number]["photos"][number] | undefined;
+  cover: (typeof motorcycles)[number]["photos"][number];
 };
 
 export const newsArticles: NewsArticle[] = [

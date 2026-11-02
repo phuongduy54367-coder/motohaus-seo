@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { newsArticles } from "../news-articles";
+import { requiresPhotoCredit } from "../motorcycles";
 
 export const metadata: Metadata = {
   title: "Tin tức mô tô, tư vấn chọn xe và kinh nghiệm sử dụng",
@@ -23,18 +24,17 @@ export default function NewsPage() {
       <section aria-label="Danh sách bài viết" className="news-grid">
         {newsArticles.map((article) => (
           <article className="news-card" key={article.slug}>
-            {article.cover ? (
-              <Link className="news-card-image" href={`/tin-tuc/${article.slug}`}>
-                <Image
-                  alt={article.cover.alt}
-                  height={640}
-                  loading="lazy"
-                  src={article.cover.src}
-                  width={960}
-                />
-              </Link>
-            ) : (
-              <div aria-hidden="true" className="news-card-image news-card-image-empty" />
+            <Link className="news-card-image" href={`/tin-tuc/${article.slug}`}>
+              <Image
+                alt={article.cover.alt}
+                height={640}
+                loading="lazy"
+                src={article.cover.src}
+                width={960}
+              />
+            </Link>
+            {requiresPhotoCredit(article.cover.license) && (
+              <span className="photo-credit">Ảnh: {article.cover.author} · {article.cover.license}</span>
             )}
             <div className="news-card-copy">
               <span className="news-category">{article.category}</span>
