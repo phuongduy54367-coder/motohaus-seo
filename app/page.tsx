@@ -25,7 +25,7 @@ export default function Home() {
           </div>
         </div>
         <div className="hero-visual">
-          <Image alt="Mô tô thể thao tại MOTOHAUS" fetchPriority="high" height={1000} priority src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1400&q=90" width={1400} />
+          <Image alt="Mô tô thể thao trong bộ sưu tập xe moto MOTOHAUS" fetchPriority="high" height={1000} priority src="https://images.unsplash.com/photo-1558981403-c5f9899a28bc?w=1400&q=90" width={1400} />
           <span className="hero-caption">MOTOHAUS / RIDE YOUR OWN WAY</span>
           <span className="hero-stamp">RIDE<br />YOUR<br />OWN WAY</span>
         </div>
