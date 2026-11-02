@@ -45,6 +45,13 @@ export default function MotorcycleCatalogue() {
           value={query}
         />
       </div>
+      <nav className="category-page-links" aria-label="Xem trang danh mục">
+        <span>Khám phá theo dòng xe:</span>
+        <Link href="/danh-muc/sport">Sportbike</Link>
+        <Link href="/danh-muc/naked">Naked bike</Link>
+        <Link href="/danh-muc/adventure">Adventure</Link>
+        <Link href="/danh-muc/cruiser">Cruiser</Link>
+      </nav>
       <div className="bike-grid" aria-live="polite">
         {visibleBikes.length ? visibleBikes.map((bike) => {
           const cover = bike.photos[0];

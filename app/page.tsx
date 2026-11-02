@@ -1,6 +1,15 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import MotorcycleCatalogue from "./motorcycle-catalogue";
 import { facebookUrl } from "./site-links";
+
+export const metadata: Metadata = {
+  title: "Cửa hàng bán xe moto uy tín TPHCM",
+  description:
+    "Khám phá bộ sưu tập mô tô tại MOTOHAUS, tham khảo thông tin xe và liên hệ xác nhận địa chỉ bán xe moto chính hãng tại TPHCM.",
+  alternates: { canonical: "/" },
+};
 
 export default function Home() {
   return (
@@ -9,7 +18,7 @@ export default function Home() {
         <div className="hero-copy">
           <span className="eyebrow">Showroom mô tô · Bộ sưu tập online</span>
           <h1>Chọn chất riêng.<br /><em>Mở máy.</em></h1>
-          <p>Những cỗ máy dành cho người thích cảm giác làm chủ cung đường. Xem xe thật, nghe tư vấn thật, chọn chiếc hợp với bạn.</p>
+          <p>MOTOHAUS là cửa hàng bán xe moto uy tín TPHCM dành cho người thích cảm giác làm chủ cung đường. Xem xe, nghe tư vấn và chọn chiếc hợp với bạn.</p>
           <div className="hero-actions">
             <a className="button-primary" href="#collection">Khám phá bộ sưu tập <span aria-hidden="true">↘</span></a>
             <a className="text-link" href={facebookUrl} rel="noreferrer" target="_blank">Đặt lịch lái thử</a>
@@ -35,8 +44,9 @@ export default function Home() {
         <div>
           <span className="eyebrow">Không chỉ là mua xe</span>
           <h2>Chọn đúng xe.<br />Đi đúng chất.</h2>
-          <p>MOTOHAUS đồng hành từ lần đầu xem xe đến những chuyến đi dài. Đội ngũ tư vấn giúp bạn hiểu rõ thông số, chi phí và lựa chọn phù hợp.</p>
+          <p>MOTOHAUS đồng hành từ lần đầu xem xe đến những chuyến đi dài. Đội ngũ tư vấn giúp bạn hiểu rõ thông số, chi phí và xác nhận địa chỉ bán xe moto chính hãng trước khi ghé showroom.</p>
           <a className="text-link" href={facebookUrl} rel="noreferrer" target="_blank">Liên hệ tư vấn ↗</a>
+          <Link className="text-link" href="/tin-tuc">Đọc cẩm nang mô tô ↗</Link>
         </div>
         <div className="about-points">
           <div className="about-point"><strong>01</strong><span>Tư vấn theo nhu cầu</span></div>

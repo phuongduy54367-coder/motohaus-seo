@@ -52,9 +52,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </Link>
           <nav className="site-nav" aria-label="Điều hướng chính">
             <Link href="/#collection">Xe đang bán</Link>
+            <Link href="/tin-tuc">Tin tức</Link>
             <Link href="/#about">Về showroom</Link>
           </nav>
-          <a className="header-cta" href={facebookUrl} rel="noreferrer" target="_blank">Liên hệ tư vấn <span aria-hidden="true">↗</span></a>
+          <Link className="header-cta" href="/lien-he">Liên hệ <span aria-hidden="true">↗</span></Link>
         </header>
         {children}
         <footer className="site-footer">
@@ -68,6 +69,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Link href="/ssr">SSR</Link>
             <Link href="/ssg">SSG</Link>
             <Link href="/topic-4">SEO · Topic 4</Link>
+            <Link href="/tin-tuc">Tin tức</Link>
+            <Link href="/lien-he">Liên hệ</Link>
           </nav>
           <a href={facebookUrl} rel="noreferrer" target="_blank">Facebook showroom <span aria-hidden="true">↗</span></a>
         </footer>

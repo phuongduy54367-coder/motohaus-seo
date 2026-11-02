@@ -81,6 +81,15 @@ export default async function MotorcycleDetailPage({ params }: BikePageProps) {
           <a className="button-primary product-contact" href={facebookUrl} rel="noreferrer" target="_blank">
             Hỏi giá qua Facebook <span aria-hidden="true">↗</span>
           </a>
+          <section className="product-finance">
+            <h2>Giá lăn bánh và phương án trả góp</h2>
+            <p>
+              Giá xe moto phân khối lớn lăn bánh phụ thuộc vào phiên bản, nơi đăng ký và các khoản phí tại thời điểm mua. Hãy liên hệ để nhận bảng tính tham khảo trước khi quyết định.
+            </p>
+            <p>
+              Nếu bạn đang tìm hiểu mua xe moto 150cc trả góp, có thể xem thêm <Link href="/moto/yamaha-yzf-r15">Yamaha YZF-R15 155 cc</Link>. Với câu hỏi mua xe moto trả góp cần thủ tục gì, đơn vị tài chính có thể yêu cầu giấy tờ định danh, thông tin thu nhập và khoản trả trước; hồ sơ cụ thể tùy chính sách và khả năng xét duyệt.
+            </p>
+          </section>
           <h2>Thông số cơ bản</h2>
           <dl className="product-specs">
             <div><dt>Hãng xe</dt><dd>{motorcycle.brand}</dd></div>
