@@ -18,6 +18,7 @@ export type NewsArticle = {
   excerpt: string;
   category: string;
   kind: "beginners" | "license" | "maintenance";
+  coverAlt: string;
   cover: (typeof motorcycles)[number]["photos"][number];
 };
 
@@ -30,6 +31,7 @@ export const newsArticles: NewsArticle[] = [
       "So sánh xe sport cỡ nhỏ, naked bike và touring theo tư thế lái, khối lượng, chi phí làm quen; kèm gợi ý Yamaha YZF-R15.",
     category: "Tư vấn chọn xe",
     kind: "beginners",
+    coverAlt: "Tổng hợp các dòng xe moto cho người mới bắt đầu tập lái",
     cover: getCover("yamaha-yzf-r15"),
   },
   {
@@ -40,6 +42,7 @@ export const newsArticles: NewsArticle[] = [
       "Giải thích câu hỏi về bằng lái mô tô theo quy định hiện hành, phân biệt xe đến 125 cc và xe trên 125 cc trước khi chọn mua.",
     category: "Luật giao thông",
     kind: "license",
+    coverAlt: "Danh sách các mẫu xe moto không cần bằng a2 hợp pháp tại Việt Nam",
     cover: getCover("suzuki-gsx-r150"),
   },
   {
@@ -50,6 +53,7 @@ export const newsArticles: NewsArticle[] = [
       "Lập kế hoạch chăm xe với các hạng mục định kỳ, vật tư hao mòn và yếu tố làm chi phí thay đổi theo cách sử dụng.",
     category: "Kinh nghiệm sử dụng",
     kind: "maintenance",
+    coverAlt: "Bảng tính chi phí bảo dưỡng xe moto phân khối lớn hàng tháng",
     cover: getCover("ktm-390-duke"),
   },
 ];

@@ -90,7 +90,7 @@ export const motorcycles: Motorcycle[] = [
     tag: "Sport 250 cc",
     description: "Sportbike 250 cc hai xi-lanh dành cho người muốn nâng cấp từ xe cỡ nhỏ.",
     photos: [
-      { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Kawasaki_Ninja_250_2018.jpg/960px-Kawasaki_Ninja_250_2018.jpg", alt: "Kawasaki Ninja 250 đời 2018 249 cc, sportbike 250 cc", source: "https://commons.wikimedia.org/wiki/File:Kawasaki_Ninja_250_2018.jpg", author: "Rikita", license: "CC BY-SA 4.0" },
+      { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/dd/Kawasaki_Ninja_250_2018.jpg/960px-Kawasaki_Ninja_250_2018.jpg", alt: "Xe moto sportbike giá rẻ cho nam - Mẫu Kawasaki Ninja 250 đời 2018", source: "https://commons.wikimedia.org/wiki/File:Kawasaki_Ninja_250_2018.jpg", author: "Rikita", license: "CC BY-SA 4.0" },
     ],
   },
   {
@@ -116,7 +116,7 @@ export const motorcycles: Motorcycle[] = [
     tag: "Naked 150 cc",
     description: "Naked bike 150 cc với tay lái thẳng và kiểu dáng gọn gàng.",
     photos: [
-      { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/2023_Honda_CB150R_ABS.jpg/960px-2023_Honda_CB150R_ABS.jpg", alt: "Honda CB150R ABS màu đen 149,16 cc, xe moto naked bike khoảng 150 cc", source: "https://commons.wikimedia.org/wiki/File:2023_Honda_CB150R_ABS.jpg", author: "Chanokchon", license: "CC BY-SA 4.0" },
+      { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/2023_Honda_CB150R_ABS.jpg/960px-2023_Honda_CB150R_ABS.jpg", alt: "Honda CB150R - Xe moto 150cc giá bao nhiêu tại MOTOHAUS; xe moto naked bike dưới 100 triệu", source: "https://commons.wikimedia.org/wiki/File:2023_Honda_CB150R_ABS.jpg", author: "Chanokchon", license: "CC BY-SA 4.0" },
     ],
   },
   {
@@ -144,7 +144,7 @@ export const motorcycles: Motorcycle[] = [
     tag: "Naked linh hoạt",
     description: "Naked bike nhỏ gọn, ưu tiên sự linh hoạt trong phố.",
     photos: [
-      { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/KTM_Duke_390-01.jpg/960px-KTM_Duke_390-01.jpg", alt: "KTM 390 Duke đời cũ 373 cc nhìn ngang, xe moto naked bike", source: "https://commons.wikimedia.org/wiki/File:KTM_Duke_390-01.jpg", author: "Priwo", license: "Public domain" },
+      { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a0/KTM_Duke_390-01.jpg/960px-KTM_Duke_390-01.jpg", alt: "Mẫu KTM 390 Duke 399 cc linh hoạt trong phố, xe moto naked bike", source: "https://commons.wikimedia.org/wiki/File:KTM_Duke_390-01.jpg", author: "Priwo", license: "Public domain" },
       { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/62/KTM_390_Duke.jpg/960px-KTM_390_Duke.jpg", alt: "KTM 390 Duke màu cam 373 cc, mẫu naked bike linh hoạt", source: "https://commons.wikimedia.org/wiki/File:KTM_390_Duke.jpg", author: "LoiR", license: "CC BY-SA 4.0" },
       { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a5/KTM_Duke_390_my_2021.jpeg/960px-KTM_Duke_390_my_2021.jpeg", alt: "KTM 390 Duke đời 2021 373 cc, mô tô naked bike KTM", source: "https://commons.wikimedia.org/wiki/File:KTM_Duke_390_my_2021.jpeg", author: "Riottoso", license: "Public domain" },
     ],
@@ -174,7 +174,7 @@ export const motorcycles: Motorcycle[] = [
     tag: "Italian Icon",
     description: "Dòng naked bike mang phong cách cơ bắp đặc trưng Ducati.",
     photos: [
-      { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ducati_Monster_-_black.jpg/960px-Ducati_Monster_-_black.jpg", alt: "Ducati Monster màu đen, naked bike phong cách cơ bắp", source: "https://commons.wikimedia.org/wiki/File:Ducati_Monster_-_black.jpg", author: "Cjp24", license: "CC BY-SA 4.0" },
+      { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4b/Ducati_Monster_-_black.jpg/960px-Ducati_Monster_-_black.jpg", alt: "MOTOHAUS - Địa chỉ bán xe moto chính hãng dòng Ducati Monster", source: "https://commons.wikimedia.org/wiki/File:Ducati_Monster_-_black.jpg", author: "Cjp24", license: "CC BY-SA 4.0" },
       { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ea/Ducati_monster_796_-_2012.jpg/960px-Ducati_monster_796_-_2012.jpg", alt: "Ducati Monster 796 đời 2012 803 cc, mô tô naked bike", source: "https://commons.wikimedia.org/wiki/File:Ducati_monster_796_-_2012.jpg", author: "4dimensionalUSB", license: "CC BY-SA 4.0" },
       { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/73/Monster_696.JPG/960px-Monster_696.JPG", alt: "Ducati Monster 696 696 cc, xe naked bike Ducati đời cũ", source: "https://commons.wikimedia.org/wiki/File:Monster_696.JPG", author: "Kaczorjunior", license: "CC BY-SA 3.0" },
     ],
@@ -189,7 +189,7 @@ export const motorcycles: Motorcycle[] = [
     tag: "Touring Adventure",
     description: "Adventure touring hướng đến những hành trình đường dài.",
     photos: [
-      { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/BMW_F850GS_Adventure_Rallye_2020.jpg/960px-BMW_F850GS_Adventure_Rallye_2020.jpg", alt: "BMW F 850 GS Adventure Rallye 2020 853 cc, xe moto adventure", source: "https://commons.wikimedia.org/wiki/File:BMW_F850GS_Adventure_Rallye_2020.jpg", author: "Franken-Guzzista", license: "CC0" },
+      { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2f/BMW_F850GS_Adventure_Rallye_2020.jpg/960px-BMW_F850GS_Adventure_Rallye_2020.jpg", alt: "Tham khảo giá xe moto phân khối lớn lăn bánh dòng BMW F 850 GS Adventure", source: "https://commons.wikimedia.org/wiki/File:BMW_F850GS_Adventure_Rallye_2020.jpg", author: "Franken-Guzzista", license: "CC0" },
       { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/bf/BMW_F850GS_left_side.jpg/960px-BMW_F850GS_left_side.jpg", alt: "BMW F 850 GS nhìn từ bên trái, adventure touring 853 cc", source: "https://commons.wikimedia.org/wiki/File:BMW_F850GS_left_side.jpg", author: "Gadfium", license: "CC0" },
       { src: "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/BMW_F850GS_right_side.jpg/960px-BMW_F850GS_right_side.jpg", alt: "BMW F 850 GS nhìn từ bên phải, mô tô adventure 853 cc", source: "https://commons.wikimedia.org/wiki/File:BMW_F850GS_right_side.jpg", author: "Gadfium", license: "CC0" },
     ],

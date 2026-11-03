@@ -136,7 +136,7 @@ export default async function NewsArticlePage({ params }: NewsArticlePageProps) 
         </header>
         <figure className="article-cover">
           <Image
-            alt={article.cover.alt}
+            alt={article.coverAlt}
             fill
             priority
             sizes="(max-width: 700px) 100vw, 1000px"

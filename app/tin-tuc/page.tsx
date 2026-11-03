@@ -26,7 +26,7 @@ export default function NewsPage() {
           <article className="news-card" key={article.slug}>
             <Link className="news-card-image" href={`/tin-tuc/${article.slug}`}>
               <Image
-                alt={article.cover.alt}
+                alt={article.coverAlt}
                 height={640}
                 loading="lazy"
                 src={article.cover.src}
