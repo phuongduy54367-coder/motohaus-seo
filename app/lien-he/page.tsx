@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SocialLinks } from "../social-links";
 import { facebookUrl } from "../site-links";
 
 export const metadata: Metadata = {
@@ -36,6 +37,13 @@ export default function ContactPage() {
           <li>Hỏi rõ phiên bản, tình trạng xe và giấy tờ liên quan.</li>
           <li>Yêu cầu báo giá chi tiết và các khoản cần chuẩn bị trước khi đặt cọc.</li>
         </ul>
+      </section>
+      <section className="contact-social">
+        <div>
+          <span className="eyebrow">Kết nối với chúng tôi</span>
+          <h2>Theo dõi MOTOHAUS trên mạng xã hội</h2>
+        </div>
+        <SocialLinks />
       </section>
       <nav aria-label="Khám phá MOTOHAUS" className="contact-links">
         <Link href="/#collection">Xem bộ sưu tập xe ↗</Link>

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Be_Vietnam_Pro, Noto_Serif } from "next/font/google";
 import { siteUrl } from "./site-url";
-import { facebookUrl } from "./site-links";
+import { SocialLinks } from "./social-links";
 import "./globals.css";
 
 const vietnamSans = Be_Vietnam_Pro({
@@ -70,7 +70,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             <Link href="/#about">Về showroom</Link>
             <Link href="/lien-he">Liên hệ</Link>
           </nav>
-          <a href={facebookUrl} rel="noreferrer" target="_blank">Facebook showroom <span aria-hidden="true">↗</span></a>
+          <SocialLinks compact />
         </footer>
       </body>
     </html>

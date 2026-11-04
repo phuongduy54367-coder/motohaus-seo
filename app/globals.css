@@ -48,11 +48,31 @@ button, input { font: inherit; }
 .header-cta { align-items: center; border: 1px solid var(--foreground); display: inline-flex; gap: 16px; padding: 12px 16px; }
 .header-cta:hover { background: var(--foreground); color: white; }
 .site-footer { align-items: center; border-top: 1px solid var(--line); display: flex; justify-content: space-between; margin-top: 72px; padding: 26px clamp(20px, 6vw, 88px); }
-.site-footer > span, .site-footer > a:last-child { color: var(--muted); font-size: 12px; }
+.site-footer > span { color: var(--muted); font-size: 12px; }
 .footer-brand { color: var(--foreground) !important; }
 .footer-demo-links { display: flex; flex-wrap: wrap; gap: 7px; }
 .footer-demo-links a { border: 1px solid var(--line); font-size: 10px; font-weight: 800; padding: 8px 10px; }
 .footer-demo-links a:hover { border-color: var(--accent); }
+.social-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.social-link { align-items: center; border: 1px solid var(--line); display: inline-flex; gap: 9px; min-height: 42px; padding: 5px 11px 5px 6px; transition: border-color 160ms ease, background 160ms ease, transform 160ms ease; }
+.social-link:hover { background: #fff; border-color: var(--accent); transform: translateY(-2px); }
+.social-icon { align-items: center; background: #e8e8e1; color: var(--accent); display: inline-flex; height: 29px; justify-content: center; width: 29px; }
+.social-icon svg { fill: currentColor; height: 17px; width: 17px; }
+.social-icon svg path { stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 2; }
+.social-icon svg rect, .social-icon svg circle { stroke: currentColor; stroke-width: 2; }
+.social-icon svg .social-icon-cutout { fill: #e8e8e1; stroke: none; }
+.social-icon svg .social-icon-fill { fill: currentColor; stroke: none; }
+.social-letter { color: var(--accent); font-size: 17px; font-weight: 900; line-height: 1; }
+.social-letter--linkedin { font-size: 14px; letter-spacing: -1px; }
+.social-letter--pinterest, .social-letter--quora { font-family: Georgia, "Times New Roman", serif; font-size: 20px; }
+.social-letter--facebook { font-family: Arial, sans-serif; font-size: 23px; }
+.social-name { font-size: 11px; font-weight: 700; }
+.social-arrow { color: var(--muted); font-size: 11px; }
+.social-links--compact { gap: 5px; }
+.social-links--compact .social-link { justify-content: center; min-height: 34px; padding: 2px; width: 34px; }
+.social-links--compact .social-icon { background: transparent; height: 24px; width: 24px; }
+.social-links--compact .social-icon svg { height: 16px; width: 16px; }
+.social-links--compact .social-name, .social-links--compact .social-arrow { display: none; }
 
 .home-main { margin: 0 auto; max-width: 1440px; width: 100%; }
 .hero { align-items: center; display: grid; gap: 5vw; grid-template-columns: 0.86fr 1.14fr; min-height: 555px; padding: 48px clamp(20px, 7vw, 100px) 56px; }
@@ -205,6 +225,8 @@ button, input { font: inherit; }
 .contact-details p, .contact-details li { color: #5e605a; font-size: 12px; line-height: 1.85; }
 .contact-details ul { border-left: 1px solid var(--line); margin: 0; padding: 5px 0 5px 28px; }
 .contact-details li { margin: 10px 0; }
+.contact-social { border-top: 1px solid var(--line); display: grid; gap: 20px; padding: 28px 0; }
+.contact-social h2 { font-family: var(--font-display), Georgia, "Times New Roman", serif; font-size: 25px; font-weight: 500; margin: 12px 0 0; }
 .contact-links { border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 22px; padding-top: 20px; }
 .contact-links a { font-size: 11px; font-weight: 800; }
 .contact-links a:hover { color: var(--accent); }
@@ -227,7 +249,7 @@ button, input { font: inherit; }
   .about-band { gap: 25px; padding: 45px 24px; }
   .about-points { padding-left: 22px; }
   .seo-note { margin-left: 24px; margin-right: 24px; }
-  .site-footer { gap: 15px; padding: 23px 24px; }
+  .site-footer { flex-wrap: wrap; gap: 15px; padding: 23px 24px; }
   .site-footer > span { display: none; }
   .product-layout { gap: 28px; grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr); }
   .news-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -262,7 +284,7 @@ button, input { font: inherit; }
   .about-points { border-left: 0; border-top: 1px solid #c7c8c0; padding: 10px 0 0; }
   .seo-note { align-items: flex-start; flex-direction: column; gap: 12px; margin: 22px 18px 0; padding: 17px; }
   .site-footer { align-items: flex-start; flex-direction: column; margin-top: 48px; padding: 22px 18px; }
-  .site-footer > a:last-child { font-size: 11px; }
+  .social-links--compact { gap: 4px; }
   .topic-page { padding: 42px 18px 10px; }
   .render-demo-page { padding: 38px 18px 10px; }
   .topic-intro h1 { font-size: 44px; }
