@@ -54,6 +54,10 @@ function SocialIcon({ network }: { network: SocialNetwork }) {
     return <span className="social-letter social-letter--facebook" aria-hidden="true">f</span>;
   }
 
+  if (network === "threads") {
+    return <span className="social-letter social-letter--threads" aria-hidden="true">@</span>;
+  }
+
   return (
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M5 4h3.8l10.2 16h-3.8L5 4Zm13.5 0L5 20" />

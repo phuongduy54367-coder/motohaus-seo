@@ -3,6 +3,7 @@ export const facebookUrl = "https://www.facebook.com/phuong.duy.4444/";
 export const socialLinks = [
   { name: "Quora", network: "quora", url: "https://fr.quora.com/profile/Mon-Thanos" },
   { name: "X", network: "x", url: "https://x.com/Rembaka17" },
+  { name: "Threads", network: "threads", url: "https://www.threads.com/@remilya17?xmt=AQG0goGF9QRrPZEp6g2e6IAkOkFJand4of0FeQ-MSE2BE9sewZ1YPVThMTRmyjBexsk8rag" },
   { name: "YouTube", network: "youtube", url: "https://www.youtube.com/@remilya17/posts" },
   { name: "Bluesky", network: "bluesky", url: "https://bsky.app/profile/nigapromax.bsky.social" },
   {
