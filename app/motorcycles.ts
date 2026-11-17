@@ -19,6 +19,7 @@ export type Motorcycle = {
 };
 
 export type MotorcycleDetails = {
+  overview: string;
   idealFor: string;
   rideFeel: string;
   highlights: string[];
@@ -264,37 +265,127 @@ export const motorcycles: Motorcycle[] = [
 export function getMotorcycleDetails(motorcycle: Motorcycle): MotorcycleDetails {
   const profiles: Record<string, Omit<MotorcycleDetails, "specifications">> = {
     Sport: {
+      overview: "Mẫu xe thể thao thiên về cảm giác lái chủ động và thiết kế khí động học.",
       idealFor: "Người thích dáng xe thể thao, cảm giác lái chủ động và những cung đường nhiều góc cua.",
       rideFeel: "Tư thế lái hướng về phía trước, phản hồi tay lái nhanh và dáng xe ôm người. Khi đi phố nên làm quen từ tốn với góc lái và vị trí ngồi.",
       highlights: ["Thiết kế khí động học, đậm chất thể thao", "Khung xe gọn, dễ kiểm soát khi vào cua", "Phù hợp nâng cấp kỹ năng xe côn tay"],
     },
     Naked: {
+      overview: "Mẫu naked bike cân bằng giữa sự linh hoạt trong phố và khả năng đi đường dài.",
       idealFor: "Người cần một mẫu xe linh hoạt để đi phố nhưng vẫn có sức mạnh cho những chuyến đi cuối tuần.",
       rideFeel: "Ghi-đông cao và tư thế ngồi thẳng giúp quan sát tốt, xoay trở dễ trong phố. Động cơ phản hồi rõ ở dải ga giữa.",
       highlights: ["Tư thế lái tự nhiên, dễ làm quen", "Ghi-đông rộng cho khả năng kiểm soát tốt", "Cân bằng giữa đi phố và đi tour ngắn"],
     },
     Adventure: {
+      overview: "Mẫu adventure touring ưu tiên sự thoải mái, tầm quan sát và khả năng đi nhiều loại đường.",
       idealFor: "Người thường đi đường dài, thích khám phá và cần tư thế ngồi thoải mái cùng khả năng chở hành lý.",
       rideFeel: "Góc lái rộng, vị trí ngồi cao và hệ thống treo ưu tiên sự êm ái. Xe phù hợp đường trường; hãy chọn lốp và phụ kiện theo cung đường thực tế.",
       highlights: ["Tư thế ngồi thoải mái cho hành trình dài", "Khoảng sáng gầm và tầm quan sát tốt", "Có thể nâng cấp thùng, kính chắn gió và bảo vệ máy"],
     },
     Cruiser: {
+      overview: "Mẫu xe phong cách cruiser/classic có yên thấp, nhịp máy thư thả và cá tính riêng.",
       idealFor: "Người yêu phong cách cổ điển, muốn tận hưởng nhịp lái thư thả và âm thanh động cơ đặc trưng.",
       rideFeel: "Yên thấp, tay lái mở và mô-men xoắn ở vòng tua thấp tạo cảm giác chắc chắn. Xe hợp chạy thư thả hơn là tối ưu tốc độ.",
       highlights: ["Yên thấp, dễ chống chân khi dừng xe", "Thiết kế giàu cá tính và dễ cá nhân hóa", "Mô-men xoắn phù hợp hành trình thư thả"],
     },
   };
 
+  const modelDetails: Record<string, Partial<MotorcycleDetails>> = {
+    "yamaha-yzf-r15": {
+      overview: "Yamaha YZF-R15 là sportbike cỡ nhỏ với động cơ 155 cc, phù hợp để làm quen xe côn tay và kỹ thuật vào cua.",
+      highlights: ["Động cơ 155 cc có VVA", "Tư thế sportbike gọn và dễ làm quen", "Phù hợp đi phố, đi tour ngắn và luyện kỹ năng"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 19 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 815 mm" }, { label: "Trọng lượng", value: "Khoảng 142 kg" }, { label: "Phanh", value: "Đĩa trước/sau, có ABS tùy phiên bản" }],
+    },
+    "suzuki-gsx-r150": {
+      overview: "Suzuki GSX-R150 là sportbike 150 cc nhẹ, dễ xoay trở và có tư thế thể thao vừa phải cho việc sử dụng hằng ngày.",
+      highlights: ["Trọng lượng nhẹ, dễ kiểm soát", "Động cơ 147,3 cc phản hồi nhanh", "Dáng sportbike nhưng vẫn tiện đi phố"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 19 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 785 mm" }, { label: "Trọng lượng", value: "Khoảng 126 kg" }, { label: "Phanh", value: "Đĩa trước/sau, ABS tùy phiên bản" }],
+    },
+    "yamaha-yzf-r25": {
+      overview: "Yamaha YZF-R25 nâng cấp trải nghiệm sportbike bằng động cơ hai xi-lanh 249 cc, phù hợp người muốn lên đời từ nhóm 150 cc.",
+      highlights: ["Động cơ hai xi-lanh vận hành mượt", "Dàn áo và tư thế đậm chất R-Series", "Cân bằng giữa đi phố và đường trường"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 35 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 780 mm" }, { label: "Trọng lượng", value: "Khoảng 169 kg" }, { label: "Phanh", value: "Đĩa trước/sau, ABS tùy phiên bản" }],
+    },
+    "kawasaki-ninja-zx-6r": {
+      overview: "Kawasaki Ninja ZX-6R là supersport 636 cc hướng đến người đã có kinh nghiệm, cần hiệu suất cao và khả năng vận hành trên đường kỹ thuật.",
+      highlights: ["Động cơ 4 xi-lanh 636 cc", "Khung gầm và phanh thiên về vận hành thể thao", "Cần người lái có kinh nghiệm và kiểm soát ga tốt"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 127 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 830 mm" }, { label: "Trọng lượng", value: "Khoảng 196 kg" }, { label: "Điện tử", value: "ABS, kiểm soát lực kéo tùy phiên bản" }],
+    },
+    "kawasaki-ninja-250": {
+      overview: "Kawasaki Ninja 250 là sportbike hai xi-lanh dễ tiếp cận, phù hợp người muốn dáng xe thể thao nhưng chưa cần sức mạnh quá lớn.",
+      highlights: ["Động cơ hai xi-lanh 249 cc", "Dễ nâng cấp từ xe 150 cc", "Dàn áo bảo vệ gió khi đi đường dài"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 39 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 795 mm" }, { label: "Trọng lượng", value: "Khoảng 167 kg" }, { label: "Phanh", value: "Đĩa trước/sau, ABS tùy phiên bản" }],
+    },
+    "honda-cbr250r": {
+      overview: "Honda CBR250R dùng động cơ một xi-lanh dễ bảo dưỡng, là lựa chọn thực dụng cho người cần một mẫu sportbike 250 cc gọn nhẹ.",
+      highlights: ["Động cơ một xi-lanh dễ làm quen", "Kích thước gọn, thuận tiện đi phố", "Chi phí sử dụng thường dễ tiếp cận hơn nhóm phân khối lớn"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 26 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 780 mm" }, { label: "Trọng lượng", value: "Khoảng 164 kg" }, { label: "Phanh", value: "Đĩa trước/sau, ABS tùy phiên bản" }],
+    },
+    "honda-cb150r": {
+      overview: "Honda CB150R là naked bike nhỏ gọn, nổi bật với tư thế lái thẳng và khả năng di chuyển linh hoạt trong đô thị.",
+      highlights: ["Thiết kế Neo Sports Café", "Tay lái rộng, dễ xử lý trong phố", "Tiết kiệm và phù hợp đi hằng ngày"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 16 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 802 mm" }, { label: "Trọng lượng", value: "Khoảng 125 kg" }, { label: "Phanh", value: "Đĩa trước/sau, ABS tùy phiên bản" }],
+    },
+    "honda-cb650r": {
+      overview: "Honda CB650R kết hợp kiểu dáng Neo Sports Café với động cơ 4 xi-lanh 649 cc, phù hợp người muốn một chiếc naked bike giàu cảm xúc.",
+      highlights: ["Động cơ 4 xi-lanh cho tiếng máy đặc trưng", "Tư thế lái thẳng, dễ dùng hơn sportbike", "Phù hợp đi phố và những chuyến đi cuối tuần"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 94 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 810 mm" }, { label: "Trọng lượng", value: "Khoảng 202 kg" }, { label: "Phanh", value: "Đĩa đôi trước, đĩa sau, ABS" }],
+    },
+    "ktm-390-duke": {
+      overview: "KTM 390 Duke là naked bike thiên về sự linh hoạt, có kích thước gọn và động cơ một xi-lanh mạnh trong nhóm dưới 400 cc.",
+      highlights: ["Mô-men xoắn tốt ở dải tua thấp và giữa", "Khung xe nhẹ, phản hồi nhanh", "Hợp đi phố, đường đèo và người thích cảm giác lái trực tiếp"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 44 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 830 mm" }, { label: "Trọng lượng", value: "Khoảng 171 kg" }, { label: "Điện tử", value: "ABS vào cua, kiểm soát lực kéo tùy đời xe" }],
+    },
+    "yamaha-mt-07": {
+      overview: "Yamaha MT-07 sử dụng động cơ CP2 hai xi-lanh 689 cc, nổi tiếng bởi mô-men xoắn dễ khai thác và khả năng đi phố linh hoạt.",
+      highlights: ["Động cơ CP2 phản hồi ga rõ ràng", "Tư thế lái thoải mái, dễ sử dụng", "Phù hợp cả đi phố lẫn tour đường dài"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 73 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 805 mm" }, { label: "Trọng lượng", value: "Khoảng 184 kg" }, { label: "Phanh", value: "Đĩa trước/sau, ABS" }],
+    },
+    "ducati-monster": {
+      overview: "Ducati Monster là naked bike hiệu suất cao với phong cách cơ bắp, động cơ V-Twin và trang bị điện tử hướng đến trải nghiệm thể thao.",
+      highlights: ["Thiết kế khung sườn và bình xăng đặc trưng", "Động cơ V-Twin giàu mô-men xoắn", "Trang bị điện tử phong phú tùy phiên bản"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 111 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 820 mm" }, { label: "Trọng lượng", value: "Khoảng 188 kg" }, { label: "Điện tử", value: "ABS vào cua, kiểm soát lực kéo và chế độ lái" }],
+    },
+    "bmw-f-850-gs-adventure": {
+      overview: "BMW F 850 GS Adventure được thiết kế cho touring đường dài, có bình xăng lớn, tư thế ngồi thoải mái và khả năng đi địa hình nhẹ.",
+      highlights: ["Tầm hoạt động tốt cho đường dài", "Có thể lắp thùng và phụ kiện touring", "Hệ thống treo và tư thế ngồi phù hợp nhiều loại đường"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 95 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 875 mm" }, { label: "Trọng lượng", value: "Khoảng 244 kg khi đầy nhiên liệu" }, { label: "Bình xăng", value: "Khoảng 23 lít" }],
+    },
+    "triumph-tiger-900-gt": {
+      overview: "Triumph Tiger 900 GT là adventure touring ba xi-lanh, cân bằng giữa sự êm ái trên đường trường và khả năng xử lý linh hoạt.",
+      highlights: ["Động cơ ba xi-lanh mượt và giàu âm thanh", "Tư thế touring thoải mái", "Phù hợp các chuyến đi dài trên đường nhựa"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 95 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 820–840 mm" }, { label: "Trọng lượng", value: "Khoảng 222 kg" }, { label: "Điện tử", value: "Nhiều chế độ lái, ABS và kiểm soát lực kéo" }],
+    },
+    "suzuki-v-strom-250": {
+      overview: "Suzuki V-Strom 250 là adventure touring nhỏ gọn, dễ tiếp cận và phù hợp cho những chuyến đi xa đầu tiên.",
+      highlights: ["Động cơ hai xi-lanh vận hành hiền và ổn định", "Tư thế ngồi thẳng, dễ quan sát", "Kích thước phù hợp người mới đi tour"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 25 hp" }, { label: "Hộp số", value: "6 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 800 mm" }, { label: "Trọng lượng", value: "Khoảng 188 kg" }, { label: "Bình xăng", value: "Khoảng 17 lít" }],
+    },
+    "harley-davidson-sportster-883": {
+      overview: "Harley-Davidson Sportster 883 mang đặc trưng cruiser Mỹ với động cơ V-Twin, yên thấp và trải nghiệm chạy thư thả.",
+      highlights: ["Âm thanh và mô-men xoắn đặc trưng V-Twin", "Yên thấp, dễ chống chân", "Nền tảng tốt để cá nhân hóa phong cách"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 50 hp" }, { label: "Hộp số", value: "5 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 735 mm" }, { label: "Trọng lượng", value: "Khoảng 260 kg" }, { label: "Làm mát", value: "Làm mát bằng gió" }],
+    },
+    "royal-enfield-classic-350": {
+      overview: "Royal Enfield Classic 350 là mẫu xe hoài cổ dễ tiếp cận, ưu tiên nhịp máy thư thả, thiết kế cổ điển và trải nghiệm đi phố.",
+      highlights: ["Thiết kế retro dễ nhận diện", "Động cơ một xi-lanh có mô-men xoắn vừa phải", "Phù hợp đi phố và những chuyến đi ngắn"],
+      specifications: [{ label: "Công suất tham khảo", value: "Khoảng 20 hp" }, { label: "Hộp số", value: "5 cấp, côn tay" }, { label: "Chiều cao yên", value: "Khoảng 805 mm" }, { label: "Trọng lượng", value: "Khoảng 195 kg" }, { label: "Phanh", value: "Đĩa trước/sau, ABS tùy phiên bản" }],
+    },
+  };
+
   const profile = profiles[motorcycle.category] ?? profiles.Naked;
+  const model = modelDetails[motorcycle.slug] ?? {};
 
   return {
     ...profile,
+    ...model,
     specifications: [
       { label: "Thương hiệu", value: motorcycle.brand },
       { label: "Phân khúc", value: motorcycle.category },
       { label: "Động cơ tham khảo", value: motorcycle.engine },
       { label: "Định vị mẫu xe", value: motorcycle.tag },
       { label: "Mức giá tham khảo", value: motorcycle.price },
+      ...(model.specifications ?? []),
     ],
   };
 }

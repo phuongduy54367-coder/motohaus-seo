@@ -168,6 +168,7 @@ button, input { font: inherit; }
 .product-summary { padding: 12px 0; }
 .product-summary h1 { font-family: var(--font-display), Georgia, "Times New Roman", serif; font-size: clamp(36px, 4vw, 54px); font-weight: 500; letter-spacing: 0; line-height: 1.05; margin: 17px 0 12px; }
 .product-description { color: var(--muted); font-size: 13px; line-height: 1.75; }
+.product-overview { background: #f0efe9; border-left: 2px solid var(--accent); color: #555750; font-size: 12px; line-height: 1.8; margin: 18px 0 0; padding: 14px 16px; }
 .product-price-label { color: var(--muted); font-size: 11px; margin-top: 28px; }
 .product-price { font-size: 25px; font-weight: 800; margin: 6px 0; }
 .product-note { color: var(--muted); font-size: 11px; line-height: 1.7; }

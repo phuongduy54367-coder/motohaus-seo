@@ -77,6 +77,7 @@ export default async function MotorcycleDetailPage({ params }: BikePageProps) {
           <span className="eyebrow">{motorcycle.brand} · {motorcycle.category}</span>
           <h1>{motorcycle.name}</h1>
           <p className="product-description">{motorcycle.description}</p>
+          <p className="product-overview">{details.overview}</p>
           <div className="product-price-label">Giá tham khảo</div>
           <p className="product-price">{motorcycle.price}</p>
           <p className="product-note">Giá và cấu hình có thể thay đổi theo phiên bản. Liên hệ để được tư vấn mẫu xe phù hợp.</p>
@@ -92,7 +93,7 @@ export default async function MotorcycleDetailPage({ params }: BikePageProps) {
               Nếu bạn đang tìm hiểu mua xe moto 150cc trả góp, có thể xem thêm <Link href="/moto/yamaha-yzf-r15">Yamaha YZF-R15 155 cc</Link>. Với câu hỏi mua xe moto trả góp cần thủ tục gì, đơn vị tài chính có thể yêu cầu giấy tờ định danh, thông tin thu nhập và khoản trả trước; hồ sơ cụ thể tùy chính sách và khả năng xét duyệt.
             </p>
           </section>
-          <h2>Thông số cơ bản</h2>
+          <h2>Thông số kỹ thuật</h2>
           <dl className="product-specs">
             {details.specifications.map((specification) => (
               <div key={specification.label}><dt>{specification.label}</dt><dd>{specification.value}</dd></div>
