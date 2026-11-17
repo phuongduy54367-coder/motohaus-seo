@@ -70,7 +70,10 @@ export default function MotorcycleCatalogue() {
                 <p>{bike.description}</p>
                 <div className="bike-bottom">
                   <span className="bike-price">{bike.price}</span>
-                  <a className="bike-cta" href={facebookUrl} rel="noreferrer" target="_blank">Tư vấn ↗</a>
+                  <span className="bike-actions">
+                    <Link className="bike-cta" href={`/moto/${bike.slug}`}>Xem chi tiết ↗</Link>
+                    <a className="bike-cta bike-cta-muted" href={facebookUrl} rel="noreferrer" target="_blank">Tư vấn</a>
+                  </span>
                 </div>
               </div>
             </article>

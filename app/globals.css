@@ -115,7 +115,9 @@ button, input { font: inherit; }
 .bike-info p { color: var(--muted); font-size: 11px; margin: 0; }
 .bike-bottom { align-items: center; border-top: 1px solid var(--line); display: flex; justify-content: space-between; margin-top: 15px; padding-top: 12px; }
 .bike-price { font-size: 13px; font-weight: 800; }
+.bike-actions { align-items: flex-end; display: flex; flex-direction: column; gap: 4px; }
 .bike-cta { color: var(--accent); font-size: 11px; font-weight: 800; }
+.bike-cta-muted { color: var(--muted); font-size: 10px; }
 .empty-results { color: var(--muted); grid-column: 1 / -1; padding: 40px 0; text-align: center; }
 .about-band { align-items: center; background: #e8e8e1; display: grid; gap: 50px; grid-template-columns: 1fr 1fr; margin-top: 65px; padding: 58px clamp(20px, 7vw, 100px); }
 .about-band h2 { font-family: var(--font-display), Georgia, "Times New Roman", serif; font-size: 40px; font-weight: 500; letter-spacing: 0; line-height: 1.05; margin: 12px 0; max-width: 430px; }
@@ -176,6 +178,10 @@ button, input { font: inherit; }
 .product-specs dt { color: var(--muted); }
 .product-specs dd { font-weight: 700; margin: 0; text-align: right; }
 .product-back { display: inline-block; font-size: 11px; font-weight: 700; margin-top: 25px; }
+.product-details p { color: #5e605a; font-size: 12px; line-height: 1.8; margin: 9px 0; }
+.product-details p strong { color: var(--foreground); }
+.product-highlights { display: grid; gap: 8px; grid-template-columns: repeat(3, 1fr); margin-top: 18px; }
+.product-highlights span { background: #f0efe9; color: #5e605a; font-size: 10px; line-height: 1.5; padding: 13px; }
 .category-page, .news-page, .contact-page, .article-page { margin: 0 auto; max-width: 1280px; padding: 34px clamp(20px, 6vw, 80px) 25px; width: 100%; }
 .category-intro, .news-intro, .contact-intro { border-bottom: 1px solid var(--line); padding: 28px 0 42px; }
 .category-intro h1, .news-intro h1, .contact-intro h1, .article-heading h1 { font-family: var(--font-display), Georgia, "Times New Roman", serif; font-size: clamp(40px, 6vw, 68px); font-weight: 500; letter-spacing: 0; line-height: 1.02; margin: 18px 0; max-width: 900px; }
@@ -301,6 +307,7 @@ button, input { font: inherit; }
   .product-photo-main { aspect-ratio: 1.2; }
   .product-summary { padding-top: 4px; }
   .product-summary h1 { font-size: 40px; }
+  .product-highlights { grid-template-columns: 1fr; }
   .category-page, .news-page, .contact-page, .article-page { padding: 22px 18px 15px; }
   .category-intro, .news-intro, .contact-intro { padding: 20px 0 30px; }
   .category-intro h1, .news-intro h1, .contact-intro h1, .article-heading h1 { font-size: 42px; }

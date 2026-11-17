@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { motorcycles, requiresPhotoCredit } from "../../motorcycles";
+import { getMotorcycleDetails, motorcycles, requiresPhotoCredit } from "../../motorcycles";
 import { facebookUrl } from "../../site-links";
 
 type BikePageProps = {
@@ -44,6 +44,8 @@ export default async function MotorcycleDetailPage({ params }: BikePageProps) {
   if (!motorcycle) {
     notFound();
   }
+
+  const details = getMotorcycleDetails(motorcycle);
 
   return (
     <main className="product-page">
@@ -92,11 +94,18 @@ export default async function MotorcycleDetailPage({ params }: BikePageProps) {
           </section>
           <h2>Thông số cơ bản</h2>
           <dl className="product-specs">
-            <div><dt>Hãng xe</dt><dd>{motorcycle.brand}</dd></div>
-            <div><dt>Phân khúc</dt><dd>{motorcycle.category}</dd></div>
-            <div><dt>Động cơ</dt><dd>{motorcycle.engine}</dd></div>
-            <div><dt>Dòng xe</dt><dd>{motorcycle.tag}</dd></div>
+            {details.specifications.map((specification) => (
+              <div key={specification.label}><dt>{specification.label}</dt><dd>{specification.value}</dd></div>
+            ))}
           </dl>
+          <section className="product-details" aria-labelledby="product-details-heading">
+            <h2 id="product-details-heading">Thông tin chi tiết</h2>
+            <p><strong>Phù hợp với:</strong> {details.idealFor}</p>
+            <p><strong>Cảm giác lái:</strong> {details.rideFeel}</p>
+            <div className="product-highlights">
+              {details.highlights.map((highlight) => <span key={highlight}>{highlight}</span>)}
+            </div>
+          </section>
           <Link className="product-back" href="/#collection">← Quay lại danh sách xe</Link>
         </section>
       </div>

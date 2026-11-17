@@ -18,6 +18,13 @@ export type Motorcycle = {
   photos: MotorcyclePhoto[];
 };
 
+export type MotorcycleDetails = {
+  idealFor: string;
+  rideFeel: string;
+  highlights: string[];
+  specifications: { label: string; value: string }[];
+};
+
 export function requiresPhotoCredit(license: string) {
   return license.startsWith("CC BY");
 }
@@ -253,3 +260,41 @@ export const motorcycles: Motorcycle[] = [
     ],
   },
 ];
+
+export function getMotorcycleDetails(motorcycle: Motorcycle): MotorcycleDetails {
+  const profiles: Record<string, Omit<MotorcycleDetails, "specifications">> = {
+    Sport: {
+      idealFor: "Người thích dáng xe thể thao, cảm giác lái chủ động và những cung đường nhiều góc cua.",
+      rideFeel: "Tư thế lái hướng về phía trước, phản hồi tay lái nhanh và dáng xe ôm người. Khi đi phố nên làm quen từ tốn với góc lái và vị trí ngồi.",
+      highlights: ["Thiết kế khí động học, đậm chất thể thao", "Khung xe gọn, dễ kiểm soát khi vào cua", "Phù hợp nâng cấp kỹ năng xe côn tay"],
+    },
+    Naked: {
+      idealFor: "Người cần một mẫu xe linh hoạt để đi phố nhưng vẫn có sức mạnh cho những chuyến đi cuối tuần.",
+      rideFeel: "Ghi-đông cao và tư thế ngồi thẳng giúp quan sát tốt, xoay trở dễ trong phố. Động cơ phản hồi rõ ở dải ga giữa.",
+      highlights: ["Tư thế lái tự nhiên, dễ làm quen", "Ghi-đông rộng cho khả năng kiểm soát tốt", "Cân bằng giữa đi phố và đi tour ngắn"],
+    },
+    Adventure: {
+      idealFor: "Người thường đi đường dài, thích khám phá và cần tư thế ngồi thoải mái cùng khả năng chở hành lý.",
+      rideFeel: "Góc lái rộng, vị trí ngồi cao và hệ thống treo ưu tiên sự êm ái. Xe phù hợp đường trường; hãy chọn lốp và phụ kiện theo cung đường thực tế.",
+      highlights: ["Tư thế ngồi thoải mái cho hành trình dài", "Khoảng sáng gầm và tầm quan sát tốt", "Có thể nâng cấp thùng, kính chắn gió và bảo vệ máy"],
+    },
+    Cruiser: {
+      idealFor: "Người yêu phong cách cổ điển, muốn tận hưởng nhịp lái thư thả và âm thanh động cơ đặc trưng.",
+      rideFeel: "Yên thấp, tay lái mở và mô-men xoắn ở vòng tua thấp tạo cảm giác chắc chắn. Xe hợp chạy thư thả hơn là tối ưu tốc độ.",
+      highlights: ["Yên thấp, dễ chống chân khi dừng xe", "Thiết kế giàu cá tính và dễ cá nhân hóa", "Mô-men xoắn phù hợp hành trình thư thả"],
+    },
+  };
+
+  const profile = profiles[motorcycle.category] ?? profiles.Naked;
+
+  return {
+    ...profile,
+    specifications: [
+      { label: "Thương hiệu", value: motorcycle.brand },
+      { label: "Phân khúc", value: motorcycle.category },
+      { label: "Động cơ tham khảo", value: motorcycle.engine },
+      { label: "Định vị mẫu xe", value: motorcycle.tag },
+      { label: "Mức giá tham khảo", value: motorcycle.price },
+    ],
+  };
+}
