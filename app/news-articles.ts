@@ -25,6 +25,18 @@ export type NewsArticle = {
 
 export const newsArticles: NewsArticle[] = [
   {
+    slug: "cac-dong-xe-moto-cho-nguoi-moi",
+    title: "Các dòng xe moto cho người mới: chọn chiếc đầu tiên thế nào?",
+    keyword: "các dòng xe moto cho người mới",
+    excerpt:
+      "So sánh xe sport cỡ nhỏ, naked bike và touring theo tư thế lái, khối lượng, chi phí làm quen; kèm gợi ý Yamaha YZF-R15.",
+    category: "Tư vấn chọn xe",
+    kind: "beginners",
+    coverAlt: "Tổng hợp các dòng xe moto cho người mới bắt đầu tập lái",
+    cover: getCover("yamaha-yzf-r15"),
+    internalLinks: ["/moto/yamaha-yzf-r15", "/moto/honda-cb650r", "/moto/honda-cb150r"],
+  },
+  {
     slug: "top-5-dong-xe-moto-cho-nguoi-moi",
     title: "Top 5 dòng xe moto cho người mới bắt đầu dễ làm quen",
     keyword: "các dòng xe moto cho người mới",
@@ -34,6 +46,18 @@ export const newsArticles: NewsArticle[] = [
     coverAlt: "Các dòng xe moto cho người mới bắt đầu dễ làm quen",
     cover: getCover("yamaha-yzf-r15"),
     internalLinks: ["/moto/yamaha-yzf-r15", "/moto/honda-cb650r", "/moto/honda-cb150r"],
+  },
+  {
+    slug: "xe-moto-khong-can-bang-a2",
+    title: "Xe moto không cần bằng A2? Hiểu đúng hạng bằng và dung tích xe",
+    keyword: "xe moto không cần bằng a2",
+    excerpt:
+      "Giải thích câu hỏi về bằng lái mô tô theo quy định hiện hành, phân biệt xe đến 125 cc và xe trên 125 cc trước khi chọn mua.",
+    category: "Luật giao thông",
+    kind: "license",
+    coverAlt: "Danh sách các mẫu xe moto không cần bằng a2 hợp pháp tại Việt Nam",
+    cover: getCover("suzuki-gsx-r150"),
+    internalLinks: ["/danh-muc/sport", "/moto/yamaha-yzf-r15"],
   },
   {
     slug: "bang-gia-xe-moto-phan-khoi-lon-lan-banh-tphcm",
