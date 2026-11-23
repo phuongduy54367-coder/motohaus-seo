@@ -40,6 +40,8 @@ export default function NewsPage() {
               <span className="news-category">{article.category}</span>
               <h2><Link href={`/tin-tuc/${article.slug}`}>{article.title}</Link></h2>
               <p>{article.excerpt}</p>
+              <span className="news-keyword">Từ khóa: {article.keyword}</span>
+              <span className="news-link-count">{article.internalLinks.length} liên kết nội bộ</span>
               <Link className="news-read-more" href={`/tin-tuc/${article.slug}`}>
                 Đọc bài viết <span aria-hidden="true">↗</span>
               </Link>

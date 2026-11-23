@@ -88,6 +88,29 @@ function ArticleBody({ article }: { article: NewsArticle }) {
     );
   }
 
+  if (article.kind === "editorial") {
+    return (
+      <>
+        <p>
+          {article.excerpt} Nội dung được xây dựng theo từ khóa <strong>{article.keyword}</strong>, giúp người đọc có thêm tiêu chí thực tế trước khi chọn xe.
+        </p>
+        <h2>Điểm cần kiểm tra trước khi chọn</h2>
+        <ul>
+          <li><strong>Nhu cầu sử dụng:</strong> xác định đi phố, đi tour hay dùng hằng ngày để chọn kiểu xe và tư thế lái phù hợp.</li>
+          <li><strong>Ngân sách tổng:</strong> tính cả chi phí đăng ký, bảo hiểm, phụ kiện bảo hộ và lịch bảo dưỡng, không chỉ giá niêm yết.</li>
+          <li><strong>Trải nghiệm thực tế:</strong> nên ngồi thử, kiểm tra chiều cao yên, trọng lượng và tình trạng xe trước khi quyết định.</li>
+        </ul>
+        <h2>Tham khảo thêm theo kế hoạch liên kết</h2>
+        <p>
+          Xem các mẫu xe và danh mục liên quan bên dưới để đối chiếu thông số, phong cách và mức giá tham khảo.
+        </p>
+        <ul>
+          {article.internalLinks.map((href) => <li key={href}><Link href={href}>{href}</Link></li>)}
+        </ul>
+      </>
+    );
+  }
+
   return (
     <>
       <p>
